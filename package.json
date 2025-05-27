@@ -1,4 +1,15 @@
 {
+  "name": "llm-backend",
+  "version": "1.0.0",
+  "description": "이 프로젝트는 Whisper를 활용한 음성 인식(STT)과 OpenAI GPT 모델을 통한 챗봇 기능을 제공합니다.",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
