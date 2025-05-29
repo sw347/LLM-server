@@ -22,8 +22,53 @@
 - whisper.py는 Whisper + ffmpeg STT 변환 파일
 - .env는 OpenAI API key 및 ffmpeg 경로
 
+## FFmpeg 설치 및 환경설정 방법
+
+Whisper 모델은 오디오 파일을 처리하기 위해 FFmpeg가 필요합니다. 다음 순서에 따라 설치하고 환경 설정을 해주세요.
+
+### Windows
+
+1. FFmepeg 공식 웹사이트 ffmpeg-git-essentials.7z zip 파일 다운로드
+2. 다운로드한 zip 파일 압축 해제 (예: C:\ffmpeg)
+3. 시스템 환경 변수 설정:
+   - 제어판 -> 시스템 -> 고급 시스템 설정 -> 환경 변수
+   - 시스템 변수에서 Path편집 -> ffmpeg의 bin파일 추가 (예: C:\ffmpeg\bin)
+4. 적용 확인
+   - 명령 프롬프트(cmd)에서 ffmpeg 입력 시 버전 정보가 출력되면 성공
+
 ## 실행 방법
 
-1. npm install
-2. pip install -r requirements.txt
-3. node server.js 또는 npm start
+1. 패키지 설치
+
+```
+npm install
+```
+
+2. .env 환경 설정
+
+```
+OPENAI_KEY=<your-apiKey>
+FFMPEG_PATH=<FFMPEG bin폴더 경로>
+```
+
+3. 파이선 라이브러리 설치
+
+```
+pip install -r requirements.txt
+```
+
+4. 서버 실행
+
+```
+node server.js
+또는
+npm start
+```
+
+## 사용 기술 스택
+
+- Express
+- JavaScript
+- WebSocket
+- multer
+- Whisper

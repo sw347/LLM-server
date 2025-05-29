@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { execFile } = require("child_process");
 
-exports.excuteWhisper = (filePath) => {
+exports.executeWhisper = (filePath) => {
   return new Promise((resolve, reject) => {
     execFile(
       "python",
