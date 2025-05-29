@@ -1,17 +1,17 @@
 const express = require("express");
 const multer = require("multer");
-const path = require("path");
 const { handleSTT } = require("../controllers/sttController");
 
 const router = express.Router();
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
+  destination: "uploads/",
   filename: function (req, file, cb) {
-    const ext = path.extname(file.originalname);
-    cb(null, Date.now() + ext);
+    const safeName = `${Date.now()}-${file.originalname.replace(
+      /[^a-zA-Z0-9.-]/g,
+      ""
+    )}`;
+    cb(null, safeName);
   },
 });
 

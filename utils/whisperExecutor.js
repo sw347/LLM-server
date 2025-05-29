@@ -18,7 +18,7 @@ exports.executeWhisper = (filePath) => {
         }, 500);
 
         if (error) {
-          return res.status(500).json({ error: "내부 서버 오류" });
+          return reject(error);
         }
 
         resolve(stdout.trim());
