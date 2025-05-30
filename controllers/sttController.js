@@ -1,5 +1,3 @@
-const fs = require("fs");
-const { execFile } = require("child_process");
 const { executeWhisper } = require("../utils/whisperExecutor");
 
 exports.handleSTT = (req, res) => {
@@ -12,7 +10,7 @@ exports.handleSTT = (req, res) => {
 
   executeWhisper(fixedPath)
     .then((text) => {
-      res.json({ text });
+      res.json({ text: encodeURI(text) });
     })
     .catch((error) => {
       console.error(`Python 실행 중 에러: ${error}`);
